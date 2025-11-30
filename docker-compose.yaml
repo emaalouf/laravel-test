@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  laravel:
+    image: webdevops/php-apache:8.2
+    container_name: laravel-test
+    restart: unless-stopped
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public
+    volumes:
+      - ./:/app
+    ports:
+      - "8080:80"
