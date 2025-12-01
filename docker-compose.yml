@@ -25,7 +25,7 @@ services:
     depends_on:
       - php
     ports:
-      - "8082:80"                # This is the port NPM will forward to
+      - "8082:80"
     volumes:
       - ./:/var/www/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
