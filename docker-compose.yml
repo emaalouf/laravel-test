@@ -9,5 +9,11 @@ services:
       - WEB_DOCUMENT_ROOT=/app/public
     volumes:
       - ./:/app
-    ports:
-      - "8080:80"
+    networks:
+      - npm_proxy
+
+# Add this at the bottom
+networks:
+  npm_proxy:
+    external: true
+    name: npm_default  
